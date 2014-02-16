@@ -9,8 +9,34 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.1.*"
+        "illuminate/support": "4.1.*",
+        "tlr/l4-support": "dev-master",
+        "tlr/l4-routing": "dev-master",
+        "tlr/l4-auth": "dev-master",
+        "tlr/l4-types": "dev-master"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/tedslittlerobot/l4-support"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/tedslittlerobot/l4-auth"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/tedslittlerobot/l4-i18n"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/tedslittlerobot/l4-routing"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/tedslittlerobot/l4-types"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Tlr\\Cms\\": "src/"
