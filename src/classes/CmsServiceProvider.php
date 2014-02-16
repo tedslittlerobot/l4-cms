@@ -24,7 +24,12 @@ class EventServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function register() {}
+	public function register()
+	{
+		$this->app->register('Tlr\Routing\EventServiceProvider');
+		$this->app->register('Tlr\Auth\AuthServiceProvider');
+		$this->app->register('Tlr\Types\TypeServiceProvider');
+	}
 
 	/**
 	 * Get the services provided by the provider.
