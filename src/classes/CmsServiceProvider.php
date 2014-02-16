@@ -2,7 +2,6 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class EventServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -10,6 +9,7 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+class CmsServiceProvider extends ServiceProvider {
 
 	/**
 	 * Kick off the router using events
