@@ -24,13 +24,17 @@ class CmsServiceProvider extends ServiceProvider {
 	}
 
 	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
+	 * Reassign default views from other modules
 	 */
-	public function provides()
+	public function reassignDefaultViews()
 	{
-		return array();
+		\Tlr\Auth\LoginController::$loginView = 'l4-cms::login';
+		\Tlr\Auth\PasswordResetController::$requestView = 'l4-cms::password.request';
+ 		\Tlr\Auth\PasswordResetController::$resetView = 'l4-cms::password.reset';
+		\Tlr\Auth\UsersController::$indexView = 'l4-cms::user.index';
+		\Tlr\Auth\UsersController::$editView = 'l4-cms::user.edit';
+		\Tlr\Auth\UsersController::$showUserView = 'l4-cms::user.show';
+		\Tlr\Auth\UsersController::$editProfileView = 'l4-cms::user.profile';
 	}
 
 }
