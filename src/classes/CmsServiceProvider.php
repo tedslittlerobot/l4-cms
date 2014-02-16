@@ -10,6 +10,8 @@ class CmsServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('tlr/l4-cms');
+
+		$this->reassignDefaultViews();
 	}
 
 	/**
