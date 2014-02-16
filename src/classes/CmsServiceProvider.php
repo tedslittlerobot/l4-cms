@@ -2,18 +2,10 @@
 
 use Illuminate\Support\ServiceProvider;
 
-
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
-	protected $defer = false;
 class CmsServiceProvider extends ServiceProvider {
 
 	/**
 	 * Kick off the router using events
-	 * @return [type] [description]
 	 */
 	public function boot()
 	{
