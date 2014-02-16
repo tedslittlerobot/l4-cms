@@ -1,4 +1,4 @@
-@extends('l4-auth::layout')
+@extends('l4-cms::layout')
 
 @section('content')
 
