@@ -40,4 +40,15 @@ class CmsServiceProvider extends ServiceProvider {
 		\Tlr\Auth\UsersController::$editProfileView = 'l4-cms::user.profile';
 	}
 
+	/**
+	 * Override method for more shallow file structure
+	 * @inheritdoc
+	 */
+	public function guessPackagePath()
+	{
+		$path = with(new \ReflectionClass($this))->getFileName();
+
+		return realpath(dirname($path).'/../');
+	}
+
 }
