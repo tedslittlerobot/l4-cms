@@ -13,7 +13,8 @@
         "tlr/l4-support": "dev-master",
         "tlr/l4-routing": "dev-master",
         "tlr/l4-auth": "dev-master",
-        "tlr/l4-types": "dev-master"
+        "tlr/l4-types": "dev-master",
+        "tlr/menu-builder": "2.0.*"
     },
     "repositories": [
         {
