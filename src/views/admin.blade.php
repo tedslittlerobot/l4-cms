@@ -8,8 +8,8 @@
 
 		@yield('content')
 
-		@include( 'l4-cms::footer' )
+		@include( 'l4-cms::fragments.footer' )
 
-		@include( 'l4-cms::foot' )
+		@include( 'l4-cms::fragments.foot' )
 	</body>
 </html>
