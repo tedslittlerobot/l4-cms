@@ -21,6 +21,7 @@ class CmsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+		$this->app->register('Tlr\Menu\Laravel\MenuServiceProvider');
 		$this->app->register('Tlr\Routing\EventServiceProvider');
 		$this->app->register('Tlr\Auth\AuthServiceProvider');
 		$this->app->register('Tlr\Types\TypeServiceProvider');
