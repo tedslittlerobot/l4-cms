@@ -1,0 +1,6 @@
+
+<header>
+
+	@yield('header')
+
+</header>
