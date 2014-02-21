@@ -1,5 +1,5 @@
 
-install: clean
+install: clean styles
 	@composer install
 
 test:
@@ -17,3 +17,8 @@ report: coverage
 clean: clean-test
 	@rm -rf vendor
 	@rm -f composer.lock
+	@rm -rf public/css
+
+styles:
+	@compass compile --force
+
