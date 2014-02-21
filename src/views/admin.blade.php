@@ -6,7 +6,9 @@
 	<body>
 		@include( 'l4-cms::fragments.header' )
 
-		@yield('content')
+		@section('body')
+			@yield('content')
+		@show
 
 		@include( 'l4-cms::fragments.footer' )
 
