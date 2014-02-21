@@ -43,5 +43,8 @@
             "Tlr\\Cms\\": "src/classes/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require-dev": {
+        "gumbyframework/gumby": "2.6.*"
+    }
 }
