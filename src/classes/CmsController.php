@@ -1,4 +1,4 @@
-<?php
+<?php namespace Tlr\Cms;
 
 use Illuminate\Routing\Controller;
 
