@@ -16,13 +16,23 @@ coverage:
 report: coverage
 	@open ./report/index.html
 
-clean: clean-test
+clean: clean-test clean-styles
 	@rm -rf vendor
 	@rm -f composer.lock
-	@rm -rf public/css
 
-styles:
-	@compass compile --force
+clean-styles:
+	@rm -rf public/css
+	@rm -rf src/scss-min
+
+copy-styles:
+	@cp -r src/scss src/scss-min
+	@mv src/scss-min/admin.scss src/scss-min/admin.min.scss
+	@mv src/scss-min/public.scss src/scss-min/public.min.scss
+
+styles: clean-styles copy-styles
+	@compass compile
+	@compass compile -e production
+	@rm -rf src/scss-min
 
 dev-symlink:
 ifndef PROJECT
