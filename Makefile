@@ -4,25 +4,25 @@ PACKAGE=l4-cms
 install: clean styles
 	@composer install
 
-test:
-	@phpunit
+clean: clean-test clean-styles
+	@rm -rf vendor
+	@rm -f composer.lock
 
 clean-test:
 	@rm -rf report
+
+clean-styles:
+	@rm -rf public/css
+	@rm -rf src/scss-min
+
+test:
+	@phpunit
 
 coverage:
 	@phpunit --coverage-html ./report
 
 report: coverage
 	@open ./report/index.html
-
-clean: clean-test clean-styles
-	@rm -rf vendor
-	@rm -f composer.lock
-
-clean-styles:
-	@rm -rf public/css
-	@rm -rf src/scss-min
 
 copy-styles:
 	@cp -r src/scss src/scss-min
