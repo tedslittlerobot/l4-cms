@@ -5,7 +5,7 @@ require 'modular-scale'
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "public/css"
-sass_dir = "src/scss"
+sass_dir = (environment == :production) ? "src/scss-min" : "src/scss"
 images_dir = "public/img"
 javascripts_dir = "public/js"
 
