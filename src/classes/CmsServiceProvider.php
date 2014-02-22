@@ -20,7 +20,7 @@ class CmsServiceProvider extends ServiceProvider {
 	{
 		$events->listen('routes.admin', function( $router )
 		{
-			$router->get('/', array( 'as' = 'admin', 'uses' => 'Tlr\Cms\CmsController@dashboard' ));
+			$router->get('/', array( 'as' => 'admin', 'uses' => 'Tlr\Cms\CmsController@dashboard' ));
 		});
 	}
 
