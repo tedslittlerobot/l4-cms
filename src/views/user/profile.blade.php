@@ -1,4 +1,4 @@
-@extends('l4-cms::layout')
+@extends('l4-cms::admin')
 
 @section('content')
 

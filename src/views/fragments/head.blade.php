@@ -19,9 +19,11 @@
 		@endif
 	@show
 
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/gumby/2.5.11/css/gumby.css">
-
 	@section( 'styles' )
-		{{-- styles --}}
+		@if(App::environment() === 'production')
+			{{ HTML::style('packages/tlr/l4-cms/css/admin.min.css') }}
+		@else
+			{{ HTML::style('packages/tlr/l4-cms/css/admin.css') }}
+		@endif
 	@show
 </head>

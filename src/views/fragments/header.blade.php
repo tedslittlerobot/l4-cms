@@ -1,6 +1,6 @@
 
-<header>
-
-	@yield('header')
-
-</header>
+@section('before-body')
+	<header>
+		@yield('header')
+	</header>
+@show

@@ -1,5 +1,13 @@
 @extends('l4-cms::layout')
 
+@section('styles')
+		@if(App::environment() === 'production')
+			{{ HTML::style('packages/tlr/l4-cms/css/public.min.css') }}
+		@else
+			{{ HTML::style('packages/tlr/l4-cms/css/public.css') }}
+		@endif
+@stop
+
 @section('content')
 
 	{{ Form::open( [ 'route' => 'login.attempt' ] ) }}
