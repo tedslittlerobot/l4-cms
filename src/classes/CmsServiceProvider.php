@@ -14,6 +14,29 @@ class CmsServiceProvider extends ServiceProvider {
 		$this->reassignDefaultViews();
 
 		$this->routes( $this->app['router'], $this->app['events'] );
+
+		$this->adminMenu();
+	}
+
+	/**
+	 * Set up the main admin menu
+	 * @todo this could probably be in a better place ;)
+	 */
+	public function adminMenu()
+	{
+		$this->app['events']->listen('routes.finish', function()
+		{
+			if (! $user = $this->app['auth']->user() ) return;
+
+			$menu = $this->app['menu']->menu('admin-header-nav');
+				$menu->setAttributes(array('class' => 'eight columns'));
+
+			$usersMenu = $menu->item('users', 'Users');
+				$usersMenu->item('manage-users', 'Manage users', route('admin.user.index'));
+
+			$profileMenu = $menu->item('user', $user->name, route('admin.profile'));
+				$profileMenu->item('logout', 'Log Out', route('logout'));
+		});
 	}
 
 	public function routes($router, $events)
