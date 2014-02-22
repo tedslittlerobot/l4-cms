@@ -1,3 +1,5 @@
+VENDOR=tlr
+PACKAGE=l4-cms
 
 install: clean styles
 	@composer install
@@ -22,7 +24,10 @@ clean: clean-test
 styles:
 	@compass compile --force
 
-symlink-dev:
-	# http://stackoverflow.com/questions/2826029/passing-additional-variables-from-command-line-to-make
-	# @TODO: Remove the given directory's vendor file of this package
-	# @TODO: Symlink this to the given directory's vendor file
+dev-symlink:
+ifndef PROJECT
+	$(error PROJECT must be a defined variable pointing to the project directory to symlink this to)
+endif
+	@rm -rf $(PROJECT)/vendor/$(VENDOR)/$(PACKAGE)
+	@mkdir -p $(PROJECT)/vendor/$(VENDOR)/
+	@ln -s . $(PROJECT)/vendor/$(VENDOR)/$(PACKAGE)
