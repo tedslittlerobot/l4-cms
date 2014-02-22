@@ -13,10 +13,10 @@ class CmsServiceProvider extends ServiceProvider {
 
 		$this->reassignDefaultViews();
 
-		$this->routes( $this->app['events'], $this->app['router'] );
+		$this->routes( $this->app['router'], $this->app['events'] );
 	}
 
-	public function routes($router)
+	public function routes($router, $events)
 	{
 		$events->listen('routes.admin', function( $router )
 		{
