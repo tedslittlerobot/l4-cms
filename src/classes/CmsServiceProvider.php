@@ -12,6 +12,16 @@ class CmsServiceProvider extends ServiceProvider {
 		$this->package('tlr/l4-cms');
 
 		$this->reassignDefaultViews();
+
+		$this->routes( $this->app['events'], $this->app['router'] );
+	}
+
+	public function routes($router)
+	{
+		$events->listen('routes.admin', function( $router )
+		{
+			$router->get('/', array( 'as' = 'admin', 'uses' => 'Tlr\Cms\CmsController@dashboard' ));
+		});
 	}
 
 	/**
