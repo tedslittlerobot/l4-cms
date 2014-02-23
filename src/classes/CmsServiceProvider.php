@@ -58,6 +58,8 @@ class CmsServiceProvider extends ServiceProvider {
 		$this->app->register('Tlr\Routing\EventServiceProvider');
 		$this->app->register('Tlr\Auth\AuthServiceProvider');
 		$this->app->register('Tlr\Types\TypeServiceProvider');
+
+		$this->commands('Tlr\Cms\InstallCommand');
 	}
 
 	/**
