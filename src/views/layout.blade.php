@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	@include( 'l4-cms::fragments.head' )
+	@section('body-tag')
 	<body>
+	@show
 		@include( 'l4-cms::fragments.header' )
 
 		@section('body')
