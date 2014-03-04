@@ -37,7 +37,7 @@ class InstallCommand extends Command {
 	 */
 	public function fire()
 	{
-		$this->call('asset:publish', array('argument' => 'tlr/l4-cms'));
+		$this->call('asset:publish', array('tlr/l4-cms'));
 	}
 
 	/**
