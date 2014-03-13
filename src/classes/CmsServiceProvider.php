@@ -60,6 +60,11 @@ class CmsServiceProvider extends ServiceProvider {
 		$this->app->register('Tlr\Types\TypeServiceProvider');
 
 		$this->commands('Tlr\Cms\InstallCommand');
+
+		if ($this->app['config']['app.debug'])
+		{
+			$this->app->register('Barryvdh\Debugbar\ServiceProvider');
+		}
 	}
 
 	/**
