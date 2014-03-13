@@ -14,7 +14,8 @@
         "tlr/l4-routing": "dev-master",
         "tlr/l4-auth": "dev-master",
         "tlr/l4-types": "dev-master",
-        "tlr/menu": "2.0.*"
+        "tlr/menu": "2.0.*",
+        "barryvdh/laravel-debugbar": "1.*"
     },
     "repositories": [
         {
